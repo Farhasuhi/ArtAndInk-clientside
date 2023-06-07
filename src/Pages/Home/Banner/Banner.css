@@ -5,3 +5,7 @@
 .banner{
     height: 400px;
 }
+.carousel .control-dots .dot.selected{
+    background-color: blue;
+    padding: 5px;
+}

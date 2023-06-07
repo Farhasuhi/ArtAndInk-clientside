@@ -8,7 +8,7 @@ const SocialNav = () => {
         <p className='rounded-3xl bg-blue-500 p-2 text-[12px]'><FaPinterestP></FaPinterestP></p>
     </>
     return (
-        <div>
+        <div className=''>
             <div className="navbar bg-base-100 justify-between items-center hidden lg:flex  z-50 fixed">
                 <div className="flex items-center space-x-4">
                     <div className="flex items-center gap-x-2">
