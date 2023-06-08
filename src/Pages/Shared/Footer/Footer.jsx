@@ -13,9 +13,9 @@ const Footer = () => {
     return (
         <div className=" w-full  relative">
             <div className="h-max lg:h-[300px]">
-                <img src={img1} className="w-full h-[650px] lg:h-[300px] rounded-xl lg:object-cover" />
-                <div className="absolute h-max lg:h-[300px] w-full  left-0 top-0  bg-black bg-opacity-60 rounded-xl text-white pt-6">
-                    <div className="w-[45%] lg:w-[90%] mx-auto">
+                <img src={img1} className="w-full h-[700px] lg:h-[300px]  lg:object-cover" />
+                <div className="absolute h-max lg:h-[300px] w-full  left-0 top-0  bg-black bg-opacity-80  text-white pt-6">
+                    <div className="w-[70%] lg:w-[90%] mx-auto">
                         <footer className="footer ">
                             <div>
                                 <div className="text text-orange-50">
@@ -51,7 +51,7 @@ const Footer = () => {
                             </div>
                         </footer>
                     </div>
-                    <footer className="footer footer-center p-4 bg-black bg-opacity-60 text-white absolute lg:bottom-0 ">
+                    <footer className="footer footer-center p-10 lg:p-4 bg-black bg-opacity-90 text-white absolute lg:bottom-0 ">
                         <div>
                             <p>Copyright © {moment().format('YYYY')}- All right reserved by Art&Ink Company Ltd</p>
                         </div>
