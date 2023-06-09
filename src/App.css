@@ -1,7 +1,16 @@
-.App-header{
-    background-color: var(--body_background);
-    color: var(--body_color);
+.dark-theme{
+    -main-heading:#5f99be;
+    -para-clr:#fff;
+    -btn-bg-clr:#5f99be;
+    -btn-text-clr:#fff;
+    -bg-clr:#111b20;
 }
-.App-link{
-    color: var(--link_color);
+h1,h2,h3,h4,h5,h6{
+    color:var(--main-heading)
+}
+p{
+    color: var(--para-clr);
+}
+body{
+    background-color: var(--bg-clr);
 }

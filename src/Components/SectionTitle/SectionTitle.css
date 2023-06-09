@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+
+.sectiontitle{
+    font-family: 'Grand Hotel', cursive;
+    font-size: 40px;
+    color: #0a6ab4d0;
+    font-weight: 700;
+    border: none;
+    width: 40%;
+}

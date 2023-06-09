@@ -1,0 +1,31 @@
+.card:hover img{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.singleClass{
+    transition: all .5s;
+
+}
+.card {
+    overflow: hidden;
+}
+.card-body{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    background-color: rgba(29, 31, 46, 0.8);
+    color:white;
+}
+.class-title h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: wheat;
+
+}
+.intro p{
+    font-size: 16px;
+    font-family :Georgia, 'Times New Roman', Times, serif;
+    font-weight: 300;
+}
