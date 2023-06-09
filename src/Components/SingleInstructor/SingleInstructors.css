@@ -1,0 +1,55 @@
+.ui-card img{
+    transform: scale(1.3);
+    transition: all 0.3s ease-out;
+
+}
+.ui-card{
+    overflow: hidden;
+    background: radial-gradient(#111 50%,#000 100%);
+    position: relative;
+}
+.ui-card:hover img{
+    transform: scale(1.1) translateY(-20px);
+    opacity: 0.3;
+}
+.description{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    transform: translateY(0px);
+    
+}
+.description h2{
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 200px;
+    margin-left: 10px;
+    transform: translateY(30px);
+    opacity: 0;
+    
+}
+.description p{
+    transform: translateY(30px);
+    opacity: 0;
+    margin-left: 10px;
+  
+}
+.description button{
+    transform: translateY(30px);
+    opacity: 0;
+}
+.ui-card:hover .description h2{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.ui-card:hover .description button{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.ui-card:hover .description p{
+    transform: translateY(0px);
+    opacity: 1;
+}
