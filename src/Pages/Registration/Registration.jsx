@@ -3,10 +3,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm, } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
+import Swal from "sweetalert2";
 
 
 const Registration = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit ,reset} = useForm();
     const { createUser, updateUserProfile, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -20,8 +21,22 @@ const Registration = () => {
         googleSignIn()
             .then(result => {
                 const loggedInUser = result.user;
-                console.log(loggedInUser);
-                navigate(from, { replace: true });
+                const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email, photoURL: loggedInUser.photoURL }
+                fetch('https://art-and-ink-server-side.vercel.app/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        navigate(from, { replace: true });
+                    })
+            })
+            .catch(error => {
+                setError(error.message)
+                console.log(error.message)
             })
     }
     const handlePasswordChange = (e) => {
@@ -53,14 +68,35 @@ const Registration = () => {
                     console.log(loggedUser);
                     updateUserProfile(loggedUser, data.name, data.photourl)
                         .then(() => {
-                            navigate('/')
-                            reset()
+                            const saveUser = {
+                                name: data.name, email: data.email, photoURL: data.photourl
+                            }
+                            console.log(saveUser)
+                            fetch('https://art-and-ink-server-side.vercel.app/users',{
+                                method:'POST',
+                                headers:{
+                                    'content-type':'application/json'
+                                },
+                                body:JSON.stringify(saveUser)
+                            })
+                                .then(res => res.json())
+                                .then(data => {
+                                    if (data.insertedId) {
+                                        reset();
+                                        Swal.fire({
+                                            position: 'top-end',
+                                            icon: 'success',
+                                            title: 'User created successfully.',
+                                            showConfirmButton: false,
+                                            timer: 1500
+                                        });
+                                        navigate('/');
+                                    }
+                                })
                         })
-                        .catch(error => {
-                            setError(error.message)
-                            console.log(error.message)
-                        })
+                        .catch(error => console.log(error))
                 })
+                .catch(error => console.log(error))
         }
         else {
             setError('PassWord and Confirm Password are not matched')
@@ -84,7 +120,7 @@ const Registration = () => {
                             <div className="flex justify-between items-center">
                                 <h1 className="text-2xl font-bold">SignUp now!</h1>
                                 <div className="flex justify-around gap-2 items-center">
-                                    <button onClick={handleGoogleSignIn } className="btn btn-outline">
+                                    <button onClick={handleGoogleSignIn} className="btn btn-outline">
                                         <FaGoogle></FaGoogle>
                                     </button>
                                     <p><FaGithub></FaGithub></p>

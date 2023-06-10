@@ -36,7 +36,7 @@ const AuthProviders = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
             console.log('current user', currentUser);
-
+            setLoading(false)
             // if(currentUser){
             //     axios.post('https://bistro-boss-server-fawn.vercel.app/jwt', {email: currentUser.email})
             //     .then(data =>{

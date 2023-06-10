@@ -29,9 +29,9 @@ const MainNav = () => {
     }
     const navbar = <>
         <li><Link className="text-orange-500 font-bold text-xl">Home</Link></li>
+        <li><Link to={'/classes'} className="text-purple-500 font-bold text-xl">Classes</Link></li>
         <li><Link className="text-blue-500 font-bold text-xl">Instructors</Link></li>
-        <li><Link className="text-purple-500 font-bold text-xl">Classes</Link></li>
-        <li><Link className="text-rose-500 font-bold text-xl">Dashboard</Link></li>
+        <li><Link className="text-rose-500 font-bold text-xl" to={'/dashboard'}>Dashboard</Link></li>
         <li><>
             <label className="swap swap-rotate">
                 {/* this hidden checkbox controls the state */}

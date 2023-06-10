@@ -9,7 +9,7 @@
 .card {
     overflow: hidden;
 }
-.card-body{
+.single-class-body{
     height: 100%;
     width: 100%;
     box-sizing: border-box;

@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 
 const LogIn = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn,googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -24,6 +24,18 @@ const LogIn = () => {
             return;
         }
         setPasswordType("password")
+    }
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const loggedInUser = result.user;
+                console.log(loggedInUser)
+                navigate(from, { replace: true });
+            })
+            .catch(error => {
+                setError(error.message)
+                console.log(error.message)
+            })
     }
     const onSubmit = (data) => {
         console.log(data)
@@ -59,7 +71,9 @@ const LogIn = () => {
                             <div className="flex justify-between items-center">
                                 <h1 className="text-2xl font-bold">Login now!</h1>
                                 <div className="flex justify-around gap-2 items-center">
-                                    <p><FaGoogle></FaGoogle></p>
+                                    <button onClick={handleGoogleSignIn} className="btn btn-outline">
+                                        <FaGoogle></FaGoogle>
+                                    </button>
                                     <p><FaGithub></FaGithub></p>
                                 </div>
                             </div>
