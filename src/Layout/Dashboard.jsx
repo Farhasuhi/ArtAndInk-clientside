@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { FaCheck, FaCheckDouble, FaHistory, FaHome, FaHouseUser, FaUserShield, FaUsers } from "react-icons/fa";
+import { FaCheck, FaCheckDouble, FaHistory, FaHome, FaHouseUser, FaUserShield, FaUsers ,FaBookReader} from "react-icons/fa";
 import useAdmin from '../Hooks/useAdmin';
 import useInstructor from '../Hooks/useInstructor';
 
 
 const Dashboard = () => {
-    // const isAdmin = false;
-    // const isInstructor = false;
+    
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor()
     const adminSideBar = <>
@@ -18,7 +17,9 @@ const Dashboard = () => {
         <li className='text-white'><Link to={'/'}><FaHome></FaHome> Home</Link></li>
     </>
     const instructorSidebar = <>
-        <li className='text-white'><Link><FaHouseUser></FaHouseUser> Instructor Home</Link></li>
+        <li className='text-white'><Link to={'/dashboard/instructorroom'}><FaHouseUser></FaHouseUser> Instructor Home</Link></li>
+        <li className='text-white'><Link to={'/dashboard/addclass'}><FaBookReader></FaBookReader> Add Class</Link></li>
+        <li className='text-white'><Link to={'/dashboard/instructoraddclsses'}><FaBookReader></FaBookReader>My Classes</Link></li>
         <li className='text-white mt-2 mx-2'>||</li>
         <li className='text-white'><Link to={'/'}><FaHome></FaHome> Home</Link></li>
     </>

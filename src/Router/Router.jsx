@@ -13,6 +13,11 @@ import AllUser from "../Pages/DashBoard/AllUser/AllUser";
 import MyClasses from "../Pages/DashBoard/MyClasses/MyClasses";
 import StudentsRoom from "../Pages/DashBoard/StudentsRoom/StudentsRoom";
 import Dashboard from "../Layout/Dashboard";
+import InstructorsRoom from "../Pages/DashBoard/InstructorsRoom/InstructorsRoom";
+import AddClass from "../Pages/DashBoard/AddClass/AddClass";
+import InstructorPrivateRoute from "./InstructorPrivateRoute";
+import AdminPrivateRoute from "./AdminPrivateRoute";
+import InstructorSelectedPage from "../Pages/InstructorSelectedPage/InstructorSelectedPage";
 
 
 
@@ -65,7 +70,20 @@ const router = createBrowserRouter([
         // admin dashboard
         {
           path:'allusers',
-          element:<AllUser></AllUser>
+          element:<AdminPrivateRoute><AllUser></AllUser></AdminPrivateRoute>
+        },
+        // instructor dashboard
+        {
+          path:'instructorroom',
+          element:<InstructorsRoom></InstructorsRoom>
+        },
+        {
+          path:"addclass",
+          element:<InstructorPrivateRoute><AddClass></AddClass></InstructorPrivateRoute>
+        },
+        {
+          path:"instructoraddclsses",
+          element:<InstructorSelectedPage></InstructorSelectedPage>
         }
       ]
     }

@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import SectionTitle from '../../../Components/SectionTitle/SectionTitle';
 import Swal from 'sweetalert2';
 import useAxiousSecure from '../../../Hooks/useAxiousSecure';
@@ -96,8 +96,8 @@ const AllUser = () => {
                                         <div className='flex justify-start items-center'>
                                             <button className="btn bg-blue-500 
                                             text-white
-                                             btn-xs" onClick={()=>handleMakeAdmin(user)}>Admin</button>
-                                            <button className="btn bg-yellow-500 text-white btn-xs" onClick={()=>handleMakeInstructor(user)}>Instructor</button>
+                                             btn-xs" onClick={()=>handleMakeAdmin(user)} disabled={user.role==='admin'}>Admin</button>
+                                            <button className="btn bg-yellow-500 text-white btn-xs" onClick={()=>handleMakeInstructor(user)} disabled={user.role==='instructor'}>Instructor</button>
                                         </div>
                                     </th>
                                 </tr>)}
