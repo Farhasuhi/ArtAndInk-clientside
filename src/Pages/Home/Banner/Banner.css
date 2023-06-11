@@ -2,7 +2,7 @@
 .banner{
     height: 400px;
 }
-.carousel .control-dots .dot.selected{
+.swiper-pagination-bullet-active{
     background-color: blue;
     padding: 5px;
 }

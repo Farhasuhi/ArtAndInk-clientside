@@ -6,10 +6,14 @@ import Home from "../Pages/Home/Home/Home";
 import LogInLayOut from "../Layout/LogInLayOut/LogInLayOut";
 import LogIn from "../Pages/LogIn/LogIn";
 import Registration from "../Pages/Registration/Registration";
-import Dashboard from "../Layout/Dashboard";
-import UserHome from "../Pages/DashBoard/UserHome/UserHome";
 import Classes from "../Pages/Classes/Classes";
 import PrivateRoute from "./PrivateRoute";
+import Instructors from "../Pages/Instructors/Instructors";
+import AllUser from "../Pages/DashBoard/AllUser/AllUser";
+import MyClasses from "../Pages/DashBoard/MyClasses/MyClasses";
+import StudentsRoom from "../Pages/DashBoard/StudentsRoom/StudentsRoom";
+import Dashboard from "../Layout/Dashboard";
+
 
 
 const router = createBrowserRouter([
@@ -24,6 +28,10 @@ const router = createBrowserRouter([
             {
               path:'classes',
               element:<Classes></Classes>
+            },
+            {
+              path:'instructors',
+              element:<Instructors></Instructors>
             }
           ]
     },
@@ -45,10 +53,20 @@ const router = createBrowserRouter([
       path:'dashboard',
       element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children: [
+        // student dashboard
         {
-          path: "userhome",
-          element: <UserHome></UserHome>,
+          path: "student",
+          element:<StudentsRoom></StudentsRoom>,
         },
+        {
+          path:'myclasses',
+          element:<MyClasses></MyClasses>
+        },
+        // admin dashboard
+        {
+          path:'allusers',
+          element:<AllUser></AllUser>
+        }
       ]
     }
 ]);

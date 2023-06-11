@@ -1,16 +1,16 @@
-.card:hover img{
+/* .card:hover img{
     transform: scale(1.3);
     cursor: pointer;
 }
 .singleClass{
     transition: all .5s;
 
-}
+} */
 .card {
     overflow: hidden;
 }
 .single-class-body{
-    height: 100%;
+    height: 300px;
     width: 100%;
     box-sizing: border-box;
     position: absolute;

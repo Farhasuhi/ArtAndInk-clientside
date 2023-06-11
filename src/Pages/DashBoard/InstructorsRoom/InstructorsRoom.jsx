@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserSelectClasses = () => {
+const InstructorsRoom = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const UserSelectClasses = () => {
     );
 };
 
-export default UserSelectClasses;
+export default InstructorsRoom;
