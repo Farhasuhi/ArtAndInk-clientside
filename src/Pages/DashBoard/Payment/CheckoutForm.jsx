@@ -74,6 +74,7 @@ const CheckoutForm = ({ singleClassPrice,enrollclass,refetch}) => {
         if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id);
             const payment = {
+                date: new Date(),
                 email: user?.email,
                 name: user?.displayName,
                 transactionId:paymentIntent.id,

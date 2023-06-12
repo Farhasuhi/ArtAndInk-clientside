@@ -25,6 +25,7 @@ import PayementHistory from "../Pages/DashBoard/PayementHistory/PayementHistory"
 import AdminRoom from "../Pages/DashBoard/AdminRoom/AdminRoom";
 import ManageClasses from "../Pages/DashBoard/ManageClasses/ManageClasses";
 import Feedback from "../Pages/DashBoard/Feedback/Feedback";
+import Errorpage from "../Pages/Errorpage/Errorpage";
 
 
 
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement:<Errorpage></Errorpage>,
         children: [
             {
               path: "/",
