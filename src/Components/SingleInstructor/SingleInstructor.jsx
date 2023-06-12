@@ -7,8 +7,8 @@ const SingleInstructor = ({ instructor }) => {
    
     return (
         <div>
-            <div className='ui-card w-[350px] rounded-3xl'>
-                <img className="lg:w-[500px] lg:h-[600px] rounded-full" src={image} alt="" />
+            <div className='ui-card lg:w-[350px] rounded-3xl'>
+                <img className="w-full lg:full lg:w-[500px] lg:h-[600px] rounded-full" src={image} alt="" />
                 <div className="content description space-y-3">
                     <h2 className="card-title ">Instructor Name:{name}</h2>
                     <p>Email:{email}</p>
