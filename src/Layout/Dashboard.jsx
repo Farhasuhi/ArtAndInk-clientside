@@ -25,9 +25,10 @@ const Dashboard = () => {
     </>
 
     const studentSidebar = <>
-        <li className='text-white'><Link><FaHouseUser></FaHouseUser> Student Home</Link></li>
+        <li className='text-white'><Link to={'/dashboard/studentroom'}><FaHouseUser></FaHouseUser> Student Home</Link></li>
         <li className='text-white'><Link to={'/dashboard/myclasses'}><FaCheck></FaCheck>My select classes</Link></li>
-        <li className='text-white'><Link><FaHistory></FaHistory> Enrolled classes</Link></li>
+        <li className='text-white' ><Link to={'/dashboard/enrolledclass'}><FaHistory></FaHistory> Enrolled classes</Link></li>
+        <li className='text-white' ><Link to={'/dashboard/paymenthistory'}><FaHistory></FaHistory> Payment history</Link></li>
         <li className='text-white mt-2 mx-2'>||</li>
         {<li className='text-white'><Link to={'/'}><FaHome></FaHome> Home</Link></li>}
     </>

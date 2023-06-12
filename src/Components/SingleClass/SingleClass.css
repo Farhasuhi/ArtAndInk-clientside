@@ -9,6 +9,16 @@
 .card {
     overflow: hidden;
 }
+.bg-red{
+    height: 300px;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    background-color: rgba(199, 33, 33, 0.76);
+    color:white;
+}
+
+
 .single-class-body{
     height: 300px;
     width: 100%;

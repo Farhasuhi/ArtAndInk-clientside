@@ -18,6 +18,10 @@ import AddClass from "../Pages/DashBoard/AddClass/AddClass";
 import InstructorPrivateRoute from "./InstructorPrivateRoute";
 import AdminPrivateRoute from "./AdminPrivateRoute";
 import InstructorSelectedPage from "../Pages/InstructorSelectedPage/InstructorSelectedPage";
+import UpdateClass from "../Pages/DashBoard/UpdateClass/UpdateClass";
+import Payment from "../Pages/DashBoard/Payment/Payment";
+import EnrolledClass from "../Pages/DashBoard/EnrolledClass/EnrolledClass";
+import PayementHistory from "../Pages/DashBoard/PayementHistory/PayementHistory";
 
 
 
@@ -60,17 +64,29 @@ const router = createBrowserRouter([
       children: [
         // student dashboard
         {
-          path: "student",
+          path: "studentroom",
           element:<StudentsRoom></StudentsRoom>,
         },
         {
           path:'myclasses',
           element:<MyClasses></MyClasses>
         },
+        {
+          path:"enrolledclass",
+          element:<EnrolledClass></EnrolledClass>
+        },
+        {
+          path:'paymenthistory',
+          element:<PayementHistory></PayementHistory>
+        },
         // admin dashboard
         {
           path:'allusers',
           element:<AdminPrivateRoute><AllUser></AllUser></AdminPrivateRoute>
+        },
+        {
+          path:"payment/:id",
+          element:<Payment></Payment>
         },
         // instructor dashboard
         {
@@ -84,6 +100,11 @@ const router = createBrowserRouter([
         {
           path:"instructoraddclsses",
           element:<InstructorSelectedPage></InstructorSelectedPage>
+        },
+        {
+          path:'updateclasses/:id',
+          element:<UpdateClass></UpdateClass>,
+
         }
       ]
     }

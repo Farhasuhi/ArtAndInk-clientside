@@ -8,6 +8,7 @@ import useInstructor from '../../Hooks/useInstructor';
 const AllClasses = ({ item, addToSelect ,disabled}) => {
     const { class_name, instructor_name, image, price, available_seats
     } = item
+    console.log(typeof available_seats)
     const navigate = useNavigate();
     const location = useLocation();
     const { user } = useContext(AuthContext);
@@ -16,12 +17,12 @@ const AllClasses = ({ item, addToSelect ,disabled}) => {
     return (
         <div>
             <div className=''>
-                <div className="card  card-compact w-full bg-base-100 shadow-xl singleClass">
+                <div className={`card  card-compact w-full  bg-base-100 shadow-xl singleClass`}>
                     <Parallax blur={{ min: -50, max: 50 }}
                     bgImage={image}
                     bgImageAlt="the menu"
                     strength={-200} className="h-[300px] w-full" >
-                        <div className="card-body single-class-body">
+                        <div className={`card-body ${available_seats===0?'bg-red':'single-class-body'}`}>
                             <div className="content pt-10 class-title ">
                                 <h2 className="card-title ">Class Name:{class_name}</h2>
                                 <div className='intro space-y-2 mt-2'>
