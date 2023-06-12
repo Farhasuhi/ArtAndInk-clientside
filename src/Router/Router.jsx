@@ -22,6 +22,9 @@ import UpdateClass from "../Pages/DashBoard/UpdateClass/UpdateClass";
 import Payment from "../Pages/DashBoard/Payment/Payment";
 import EnrolledClass from "../Pages/DashBoard/EnrolledClass/EnrolledClass";
 import PayementHistory from "../Pages/DashBoard/PayementHistory/PayementHistory";
+import AdminRoom from "../Pages/DashBoard/AdminRoom/AdminRoom";
+import ManageClasses from "../Pages/DashBoard/ManageClasses/ManageClasses";
+import Feedback from "../Pages/DashBoard/Feedback/Feedback";
 
 
 
@@ -76,6 +79,10 @@ const router = createBrowserRouter([
           element:<EnrolledClass></EnrolledClass>
         },
         {
+          path:"payment/:id",
+          element:<Payment></Payment>
+        },
+        {
           path:'paymenthistory',
           element:<PayementHistory></PayementHistory>
         },
@@ -85,8 +92,16 @@ const router = createBrowserRouter([
           element:<AdminPrivateRoute><AllUser></AllUser></AdminPrivateRoute>
         },
         {
-          path:"payment/:id",
-          element:<Payment></Payment>
+          path:"feedback/:id",
+          element:<Feedback></Feedback>
+        },
+        {
+          path:'adminroom',
+          element:<AdminRoom></AdminRoom>
+        },
+        { 
+          path:"manageclasses",
+          element:<ManageClasses></ManageClasses>
         },
         // instructor dashboard
         {

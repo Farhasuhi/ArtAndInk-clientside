@@ -10,9 +10,9 @@ const Dashboard = () => {
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor()
     const adminSideBar = <>
-        <li className='text-white'><Link><FaUserShield></FaUserShield> Admin</Link></li>
+        <li className='text-white'><Link  to={'/dashboard/adminroom'}><FaUserShield></FaUserShield> Admin</Link></li>
         <li className='text-white'><Link to={'/dashboard/allusers'}><FaUsers></FaUsers>All Users</Link></li>
-        <li className='text-white'><Link> <FaCheckDouble></FaCheckDouble>  Manage Classes</Link></li>
+        <li className='text-white'><Link to={`/dashboard/manageclasses`} > <FaCheckDouble></FaCheckDouble>Manage Classes</Link></li>
         <li className='text-white mt-2 mx-2'>||</li>
         <li className='text-white'><Link to={'/'}><FaHome></FaHome> Home</Link></li>
     </>
