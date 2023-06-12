@@ -2,7 +2,7 @@ import React from 'react';
 
 const Stat = () => {
     return (
-        <div className='w-[50%] mx-auto my-20'>
+        <div className='w-[50%]  text-center mx-auto my-20'>
             <div className="stats shadow">
                 <div className="stat">
                     <div className="stat-figure text-primary">
