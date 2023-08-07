@@ -1,9 +1,12 @@
 import React from 'react';
 import SectionTitle from '../SectionTitle/SectionTitle';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const Contact = () => {
     return (
-        <div>
+        <div data-aos="fade-up"
+        data-aos-anchor-placement="center-bottom"data-aos-duration="2000" >
             <div>
                 <SectionTitle headingName={"Contact With US"}></SectionTitle>
             </div>
